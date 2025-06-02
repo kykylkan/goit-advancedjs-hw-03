@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Search App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.1/simple-lightbox.min.css" />
+    <style>
+      .loader {
+        display: block;
+        width: 48px;
+        height: 48px;
+        border: 5px solid #ccc;
+        border-top-color: #005eb5;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+      }
+
+      .loader.hidden {
+        display: none;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 40px auto;
+        max-width: 1200px;
+      }
+
+      .gallery-item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .info {
+        padding: 10px;
+        background-color: #fff;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    </style>
+    <script type="module" crossorigin src="/goit-advancedjs-hw-03/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-hw-03/assets/vendor-CrlV4O_2.js">
+    <link rel="stylesheet" crossorigin href="/goit-advancedjs-hw-03/assets/vendor-CWKLx11g.css">
+    <link rel="stylesheet" crossorigin href="/goit-advancedjs-hw-03/assets/index-DvPDDfy5.css">
+  </head>
+  <body>
+    <form>
+      <input type="text" name="searchQuery" placeholder="Search images..." />
+      <button type="submit">Search</button>
+    </form>
+    <div class="loader hidden"></div>
+    <ul class="gallery"></ul>
+
+  </body>
+</html>
